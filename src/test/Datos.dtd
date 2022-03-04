@@ -1,0 +1,10 @@
+<!ELEMENT tipoPersona (persona)*>
+        <!ELEMENT persona (datos,comentario?)*>
+        <!ATTLIST persona
+                nacimiento CDATA #REQUIRED>
+        <!ELEMENT info (datos)*>
+        <!ELEMENT datos (nombre,apellidos,dni)*>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT apellidos (#PCDATA)>
+        <!ELEMENT dni (#PCDATA)>
+        <!ELEMENT comentario (#PCDATA)>

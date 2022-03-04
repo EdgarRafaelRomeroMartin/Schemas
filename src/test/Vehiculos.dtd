@@ -1,0 +1,12 @@
+<!ELEMENT vehiculos (vehiculo+)*>
+        <!ELEMENT vehiculo (nombre+,modelo,fabricacion,modificaciones)*>
+        <!ELEMENT nombre (#PCDATA)>
+        <!ELEMENT modelo (#PCDATA)>
+        <!ELEMENT fabricacion (inicio,fin)*>
+        <!ELEMENT inicio (dia,mes,anyo)*>
+        <!ELEMENT dia (#PCDATA)>
+        <!ELEMENT mes (#PCDATA)>
+        <!ELEMENT anyo (#PCDATA)>
+        <!ELEMENT fin (dia,mes,anyo)*>
+        <!ELEMENT modificaciones (modificacion+)*>
+        <!ELEMENT modificacion (#PCDATA)>

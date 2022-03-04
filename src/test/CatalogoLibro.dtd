@@ -1,0 +1,14 @@
+<!ELEMENT catalogoLibro (libro)*>
+        <!ELEMENT libro (titulo, autor+, fecha, ISBN, editor)>
+        <!ATTLIST libro
+                categoria (autobiografia | noficcion | ficcion) #REQUIRED
+                enstock (true | false) "false"
+                revisor CDATA "">
+        <!ELEMENT Nombre (#PCDATA)>
+        <!ELEMENT titulo (Nombre)>
+        <!ELEMENT autor (Nombre)>
+        <!ELEMENT fecha (mes?, anyo)>
+        <!ELEMENT ISBN (#PCDATA)>
+        <!ELEMENT editor (Nombre)>
+        <!ELEMENT mes (#PCDATA)>
+        <!ELEMENT anyo (#PCDATA)>

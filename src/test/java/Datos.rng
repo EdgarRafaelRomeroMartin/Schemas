@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+    <define name="persona">
+        <element name="persona">
+            <ref name="attlist.persona"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="datos"/>
+                    <ref name="comentario"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="attlist.persona" combine="interleave">
+        <attribute name="nacimiento"/>
+    </define>
+    <define name="datos">
+        <element name="datos">
+            <ref name="attlist.datos"/>
+            <zeroOrMore>
+                <choice>
+                    <ref name="nombre"/>
+                    <ref name="apellidos"/>
+                    <ref name="dni"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+    <define name="attlist.datos" combine="interleave">
+        <empty/>
+    </define>
+    <define name="nombre">
+        <element name="nombre">
+            <ref name="attlist.nombre"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist.nombre" combine="interleave">
+        <empty/>
+    </define>
+    <define name="apellidos">
+        <element name="apellidos">
+            <ref name="attlist.apellidos"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist.apellidos" combine="interleave">
+        <empty/>
+    </define>
+    <define name="dni">
+        <element name="dni">
+            <ref name="attlist.dni"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist.dni" combine="interleave">
+        <empty/>
+    </define>
+    <define name="comentario">
+        <element name="comentario">
+            <ref name="attlist.comentario"/>
+            <text/>
+        </element>
+    </define>
+    <define name="attlist.comentario" combine="interleave">
+        <empty/>
+    </define>
+    <start>
+        <choice>
+            <ref name="persona"/>
+        </choice>
+    </start>
+</grammar>
